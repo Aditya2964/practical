@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practial</title>
+    <!-- Prism.js CSS for syntax highlighting -->
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet"/>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        nav {
+            background: #f5f5f5;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 6px;
+            width: 50%;
+        }
+        nav a {
+            margin-right: 15px;
+            text-decoration: none;
+            color: #0074d9;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        h4 {
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <h1>practial</h1>
+    <button id="topBtn" style="position:fixed;bottom:80px;right:30px;display:none;z-index:1000;">Top</button>
+     <button id="bottomBtn" style="position:fixed;bottom:30px;right:30px;z-index:1000;">Bottom</button>
+    <!-- Menu -->
+    <nav aria-label="C++ Programs Menu">
+        <a href="#prime-class-cpp">Prime number in class (C++)</a><br>
+        <a href="#class-Templat">concept of class template</a><br>
+        <a href="#palndrom">palndrom number in given range (class)</a><br>
+        <a href="#perfect-number">Perfect number in class</a><br>
+        <a href="#factorial">Factorial of a number using class</a><br>
+        <a href="#array">Array in class</a><br>
+        <a href="#class-object">use of Class and object</a><br>
+        <a href="#function-overloading">Function Overloading</a><br>
+        <a href="#operator-overloading">Operator Overloading</a><br>
+        <a href="#constructor-destructor">Constructor and Destructor</a><br>
+        <a href="#single-inheritance">Single Inheritance and multiple Inheritance</a><br>
+        <a href="#multilevel-inheritance">Multilevel Inheritance</a><br>
+        <a href="#hirarchical-inheritance">Hierarchical Inheritance</a><br>
+        <a href="#virtual-function">Virtual Function</a><br>
+        <a href="#function-template">Function Template</a><br>
+        <a href="#friend-function">Friend Function</a><br>
+        <a href="#friend-class">Friend Class</a><br>
+    </nav>
+    <nav aria-label="Linux Commands Menu">
+        <a href="#linux">Linux commands</a><br>
+        <a href="#fibonacci">linux fibonacci series</a><br>
+        <a href="#time">display message according the time</a><br>
+        <a href="#login">check user is login or not</a><br>
+        <a href="#factorial">factorial of a number</a><br>
+        <a href="#divisible">check number is divisible by 7 or not</a><br>
+        <a href="#linux-prime">linux prime number</a><br>
+        <a href="#linux-palindrome">linux palindrome</a><br>
+        <a href="#linux-armstrong">linux armstrong</a><br>
+        <a href="#filter-redirection">Filter and Redirection</a><br>
+    </nav>
+
+    <!-- Code Section 1 -->
+    <h4 id="prime-class-cpp">Prime number in class (C++)</h4>
+    <button class="copy-btn" data-target="code1">Copy Code</button>
+    <pre><code id="code1" class="language-cpp">
+// C++ program to print prime numbers in a range using class
+#include &lt;iostream&gt;
+using namespace std;
+
+class prime
+{
+    private:
+    int start, end;
+    public:
+    void getrange()
+    {
+        cout &lt;&lt; "enter range: ";
+        cin &gt;&gt; start &gt;&gt; end;
+    }
+
+    void isprime()
+    {
+        int i, j;
+        cout &lt;&lt; "prime numbers in the range " &lt;&lt; start &lt;&lt; " to " &lt;&lt; end &lt;&lt; " are: " &lt;&lt; endl;
+        for (i = start; i &lt;= end; i++)
+        {
+            int check = 0;
+            for (j = 2; j &lt; i; j++)
+            {
+                if (i % j == 0)
+                {
+                    check++;
+                    break;
+                }
+            }
+            if (check == 0)
+            {
+                cout &lt;&lt; i &lt;&lt; " ";
+            }
+        }
+        cout &lt;&lt; endl;
+    }
+};
+
+int main()
+{
+    prime p;
+    p.getrange();
+    p.isprime();
+    return 0;
+}
+    </code></pre>
+
+   
+
+    <h4 id="class-Templat">concept of class template</h4>
+    <button class="copy-btn" data-target="code2">Copy Code</button>
+    <pre><code id="code2" class="language-cpp">
+    
+// C++ program to demonstrate the concept of class template
+#include &lt;iostream.h&gt;
+#include &lt;conio.h&gt;
+template &lt;class T&gt;
+class Maxfinder
+{
+    public:
+
+    T max(T a, T b)
+    {
+        return (a > b) ? a : b;
+    }
+}
+
+int main()
+{
+    clrscr();
+    Maxfinder&lt;int&gt; intMax;
+    cout &lt;&lt; intMax.Max(10, 20) &lt;&lt; endl;
+
+    Maxfinder&lt;double&gt; doubleMax;
+    cout &lt;&lt; doubleMax.Max(10.5, 20.5) &lt;&lt; endl;
+    getch();
+}
+    </code></pre>
+  
+    <h4 id="palndrom">palndrom number in given range (class)</h4>
+    <button class="copy-btn" data-target="code3">Copy Code</button>
+    <pre><code id="code3" class="language-cpp">
+    
+// C++ program to print palindrome numbers in a range using class
+#include &lt;iostream.h&gt;
+#include &lt;conio.h&gt;
+class Palindrome
+{
+    private:
+    int start, end;
+    public:
+    void getRange()
+    {
+        cout &lt;&lt; "Enter range: ";
+        cin &gt;&gt; start &gt;&gt; end;
+    }
+    void isPalindrome()
+    {
+        cout &lt;&lt; "Palindrome numbers in the range " &lt;&lt; start &lt;&lt; " to " &lt;&lt; end &lt;&lt; " are: " &lt;&lt; endl;
+        for (int i = start; i &lt;= end; i++)
+        {
+            int remain, result = 0;
+            int number = i;
+            while (number)
+            {
+                remain = number % 10;
+                result = result * 10 + remain;
+                number /= 10;
+            }
+            if (result == i)
+            {
+                cout &lt;&lt; i &lt;&lt; " ";
+            }
+        }
+    }
+};
+
+int main()
+{
+    clrscr();
+    Palindrome p;
+    p.getRange();
+    p.isPalindrome();
+    getch();
+}
+    </code></pre>
+
+    <h4 id="perfect-number">Perfect number in class</h4>
+    <button class="copy-btn" data-target="code4">Copy Code</button>
+    <pre><code id="code4" class="language-cpp">
+        // C++ program to find given number is perfect or not using class
+#include &lt;iostream.h&gt;
+#include &lt;conio.h&gt;
+
+class Perfect
+{
+    public:
+    int number;
+    void getNumber()
+    {
+        cout &lt;&lt; "Enter a number: ";
+        cin &gt;&gt; number;
+    }
+    void isPerfect()
+    {
+        int sum = 0;
+        for (int i = 1; i &lt; number; i++)
+        {
+            if (number % i == 0)
+            {
+                sum = sum + i;
+            }
+        }
+        if (number == sum)
+        {
+            cout &lt;&lt; number &lt;&lt; " is a perfect number." &lt;&lt; endl;
+        }
+        else
+        {
+            cout &lt;&lt; number &lt;&lt; " is not a perfect number." &lt;&lt; endl;
+        }
+    }
+};
+
+int main()
+{
+    clrscr();
+    Perfect p;
+    p.getNumber();
+    p.isPerfect();
+    getch();
+}
+
+    </code></pre>
+
+    <h4 id="factorial">Factorial of a number using class</h4>
+    <button class="copy-btn" data-target="code5">Copy Code</button>
+    <pre><code id="code5" class="language-cpp">
+// C++ program to find factorial of a number using class
+#include &lt;iostream.h&gt;
+#include &lt;conio.h&gt;
+
+class Factorial
+{
+    private:
+    int number;
+    public:
+    void getNumber()
+    {
+        cout &lt;&lt; "Enter a number: ";
+        cin &gt;&gt; number;
+    }
+    void factorial()
+    {
+        int fact = 1;
+        for (int i = 1; i &lt;= number; i++)
+        {
+            fact *= i;
+        }
+        cout &lt;&lt; "Factorial of " &lt;&lt; number &lt;&lt; " is: " &lt;&lt; fact &lt;&lt; endl;
+    }
+};
+int main()
+{
+    clrscr();
+    Factorial f;
+    f.getNumber();
+    f.factorial();
+    getch();
+}
+    </code></pre>
+
+    <h4 id="array">Array in class</h4>
+    <button class="copy-btn" data-target="code6">Copy Code</button>
+    <pre><code id="code6" class="language-cpp">
+    
+// C++ program to demonstrate array in class
+#include &lt;iostream.h&gt;
+#include &lt;conio.h&gt;
+class vehical
+{
+    private:
+    int vehical_no;
+    char type[20];
+    char color[20];
+    float price;
+    public:
+    void getdata()
+    {
+        cout &lt;&lt; "Enter vehical number: ";
+        cin &gt;&gt; vehical_no;
+        cout &lt;&lt; "Enter type of vehical: ";
+        cin &gt;&gt; type;
+        cout &lt;&lt; "Enter color of vehical: ";
+        cin &gt;&gt; color;
+        cout &lt;&lt; "Enter price of vehical: ";
+        cin &gt;&gt; price;
+    }
+
+    void display()
+    {
+        cout &lt;&lt; "Vehical number: " &lt;&lt; vehical_no &lt;&lt; endl;
+        cout &lt;&lt; "Type of vehical: " &lt;&lt; type &lt;&lt; endl;
+        cout &lt;&lt; "Color of vehical: " &lt;&lt; color &lt;&lt; endl;
+        cout &lt;&lt; "Price of vehical: " &lt;&lt; price &lt;&lt; endl;
+    }
+};
+    int main()
+    {
+        clrscr();
+        vehical v[3];
+        for (int i = 0; i &lt; 3; i++)
+        {
+            v[i].getdata();
+            v[i].display();
+        }
+        getch();
+    }
+    </code></pre>
+
+    <h4 id="class-object">use of Class and object </h4>
+    <button class="copy-btn" data-target="code7">Copy Code</button>
+    <pre><code id="code7" class="language-cpp">
+// C++ program to demonstrate the use of class and object
+#include &lt;iostream.h&gt;
+#include &lt;conio.h&gt;
+class Student
+{
+    private:
+    int roll_no;
+    char name[20];
+    public:
+    void getData()
+    {
+        cout &lt;&lt; "Enter roll number: ";
+        cin &gt;&gt; roll_no;
+        cout &lt;&lt; "Enter name: ";
+        cin &gt;&gt; name;
+    }
+
+    void displayData()
+    {
+        cout &lt;&lt; "Roll number: " &lt;&lt; roll_no &lt;&lt; endl;
+        cout &lt;&lt; "Name: " &lt;&lt; name &lt;&lt; endl;
+    }
+
+};
+int main()
+{
+    clrscr();
+    Student s;
+    s.getData();
+    s.displayData();
+    getch();
+
+}
+    </code></pre>
+
+    <h4 id="function-overloading">Function Overloading</h4>
+    <button class="copy-btn" data-target="code8">Copy Code</button>
+    <pre><code id="code8" class="language-cpp">
+// C++ program to demonstrate function overloading
+#include &lt;iostream.h&gt;
+#include &lt;conio.h&gt;
+class cal
+{
+    public:
+    int add(int a, int b)
+    {
+        return a + b;
+    }
+    float add(float a, float b, float c)
+    {
+        return a + b + c;
+    }
+};
+    int main()
+    {
+        clrscr();
+        cal c;
+        cout &lt;&lt; "Sum of 10 and 20 is: " &lt;&lt; c.add(10, 20) &lt;&lt; endl;
+        cout &lt;&lt; "Sum of 10.5, 20.5 and 30.5 is: " &lt;&lt; c.add(10.5, 20.5, 30.5) &lt;&lt; endl;
+        getch();
+    }
+    </code></pre>
+
+    <h4 id="operator-overloading">Operator Overloading</h4>
+    <button class="copy-btn" data-target="code9">Copy Code</button>
+    <pre><code id="code9" class="language-cpp">
+// C++ program to demonstrate operator overloading
+#include &lt;iostream.h&gt;
+#include &lt;conio.h&gt;
+class Counter
+{
+    private:
+    int value;
+    public:
+    Counter(int val = 0) : value(val) {}
+    Counter operator++()
+    {
+        ++value;
+        return *this;
+    }
+    Counter operator++(int)
+    {
+        Counter temp = *this;
+        ++value;
+        return temp;
+    }
+    void display() const
+    {
+        cout &lt;&lt; "Counter value: " &lt;&lt; value &lt;&lt; endl;
+    }
+};
+    int main()
+    {
+        clrscr();
+        Counter c1(5);
+        c1.display();
+        ++c1;
+        cout &lt;&lt; "After pre-increment: ";
+        c1.display();
+        c1++;
+        cout &lt;&lt; "After post-increment: ";
+        c1.display();
+        getch();
+    }
+    </code></pre>
+
+    <h4 id="constructor-destructor">Constructor and Destructor</h4>
+    <button class="copy-btn" data-target="code10">Copy Code</button>
+    <pre><code id="code10" class="language-cpp">
+// C++ program to demonstrate constructor and destructor
+#include &lt;iostream.h&gt;
+#include &lt;conio.h&gt;
+class Stu
+{
+    private:
+    int roll_no;
+    char name[20];
+
+    public:
+    Stu(); // constructor
+    ~Stu(); // destructor
+    void read();
+    void display();
+};
+Stu::Stu()
+{
+    cout &lt;&lt; "Constructor called." &lt;&lt; endl;
+}
+void Stu::read()
+{
+    cout &lt;&lt; "Enter roll number: ";
+    cin &gt;&gt; roll_no;
+    cout &lt;&lt; "Enter name: ";
+    cin &gt;&gt; name;
+}
+void stu::display()
+{
+    cout &lt;&lt; "Roll number: " &lt;&lt; roll_no &lt;&lt; endl;
+    cout &lt; "Name: " &lt;&lt; name &lt;&lt; endl;
+}
+
+Stu::~Stu()
+{
+    cout &lt;&lt; "Destructor called." &lt;&lt; endl;
+}
+int main()
+{
+    clrscr();
+    Stu s;
+    s.read();
+    s.display();
+    getch();
+}
+    </code></pre>
+
+    <h4 id="single-inheritance">Single Inheritance and multiple Inheritance</h4>
+    <button class="copy-btn" data-target="code11">Copy Code</button>
+<pre><code id="code11" class="language-cpp">
+// C++ program to demonstrate single inheritance and multiple inheritance
+#include &lt;iostream.h&gt;
+#include &lt;conio.h&gt;
+class animal
+{
+    public:
+    void eat ()
+    {
+        cout &lt;&lt; "Animal eats." &lt;&lt; endl;
+    }
+};
+class dog : public animal
+{
+    public:
+    void bark()
+    {
+        cout &lt;&lt; "Dog barks." &lt;&lt; endl;
+    }
+};
+
+int main()
+{
+    clrscr();
+    dog dog1;
+    dog1.eat();
+    dog1.bark();
+    getch();
+}
+
+    </code></pre>
+
+    <h4 id="multilevel-inheritance">Multilevel Inheritance</h4>
+    <button class="copy-btn" data-target="code12">Copy Code</button>
+<pre><code id="code12" class="language-cpp">
+// C++ program to demonstrate multilevel inheritance
+#include &lt;iostream.h&gt;
+#include &lt;conio.h&gt;
+class A
+{
+    public:
+    int a;
+    void getA()
+    {
+        cout &lt;&lt; "Enter value of a: ";
+        cin &gt;&gt; a;
+    }
+};
+class B : public A
+{
+    public:
+    int b;
+    void getB()
+    {
+        cout &lt;&lt; "Enter value of b: ";
+        cin &gt;&gt; b;
+    }
+};
+class C : public B
+{
+    public:
+    int c;
+    void getC()
+    {
+        cout &lt;&lt; "Enter value of c: ";
+        cin &gt;&gt; c;
+    }
+    void sum ()
+    {
+        int result = a + b + c;
+        cout &lt;&lt; "Sum of a, b and c is: " &lt;&lt; result &lt;&lt; endl;
+    }
+};
+
+int main()
+{
+    clrscr();
+    C obj;
+    obj.getA();
+    obj.getB();
+    obj.getC();
+    obj.sum();
+    getch();
+}
+    </code></pre>
+
+    <h4 id="hirarchical-inheritance">Hierarchical Inheritance</h4>
+    <button class="copy-btn" data-target="code13">Copy Code</button>
+<pre><code id="code13" class="language-cpp">
+// C++ program to demonstrate hierarchical inheritance
+#include &lt;iostream.h&gt;
+#include &lt;conio.h&gt;
+class A
+{
+    public:
+    int x, y;
+    void getData()
+    {
+        cout &lt;&lt; "Enter x and y: ";
+        cin &gt;&gt; x &gt;&gt; y;
+    }
+};
+class B : public A
+{
+    public:
+    void product()
+    {
+        cout &lt;&lt; "Product of x and y is: " &lt;&lt; x * y &lt;&lt; endl;
+    }
+};
+class C : public A
+{
+    public:
+    void sum()
+    {
+        cout &lt;&lt; "Sum of x and y is: " &lt;&lt; x + y &lt;&lt; endl;
+    }
+};
+int main()
+{
+    clrscr();
+    B objB;
+    C objC;
+    objB.getData();
+    objB.product();
+    objC.getData();
+    objC.sum();
+    getch();
+}
+    </code></pre>
+
+    <h4 id="virtual-function">Virtual Function</h4>
+    <button class="copy-btn" data-target="code14">Copy Code</button>
+<pre><code id="code14" class="language-cpp">
+// C++ program to demonstrate virtual function
+#include &lt;iostream.h&gt;
+#include &lt;conio.h&gt;
+class parent
+{
+    public:
+    virtual void display()
+    {
+        cout &lt;&lt; "Display from parent class." &lt;&lt; endl;
+    }
+};
+class child : public parent
+{
+    public:
+    void display()
+    {
+        cout &lt;&lt; "Display from child class." &lt;&lt; endl;
+    }
+};
+int main()
+{
+    clrscr();
+    parent*p;
+    child c;
+    p = &c;
+    c.display();
+    getch();
+}
+    </code></pre>
+
+    <h4 id="function-template">Function Template</h4>
+    <button class="copy-btn" data-target="code15">Copy Code</button>
+    <pre><code id="code15" class="language-cpp">
+    
+// C++ program to demonstrate function template
+#include &lt;iostream.h&gt;
+#include &lt;conio.h&gt;
+template &lt;class T&gt;
+T max(T a, T b)
+{
+    return (a > b) ? a : b;
+}
+int main()
+{
+    clrscr();
+    cout &lt;&lt; "Max of 10 and 20 is: " &lt;&lt; max(10, 20) &lt;&lt; endl;
+    cout &lt;&lt; "Max of 10.5 and 20.5 is: " &lt;&lt; max(10.5, 20.5) &lt;&lt; endl;
+    getch();
+}
+    </code></pre>
+
+    <h4 id="friend-function">Friend Function</h4>
+    <button class="copy-btn" data-target="code16">Copy Code</button>
+<pre><code id="code16" class="language-cpp">
+// C++ program to demonstrate friend function
+#include &lt;iostream.h&gt;
+#include &lt;conio.h&gt;
+class Box
+{
+    double width;
+    public:
+    friend void printWidth(Box b);
+    void setWidth(double w);
+};
+void Box::setWidth(double w)
+{
+    width = w;
+}
+void printWidth(Box b)
+{
+    cout &lt;&lt; "Width of box: " &lt;&lt; b.width &lt;&lt; endl;
+}
+int main()
+{
+    clrscr();
+    Box box;
+    box.setWidth(10.5);
+    printWidth(box);
+    getch();
+}
+    </code></pre>
+
+    <h4 id="friend-class">Friend Class</h4>
+    <button class="copy-btn" data-target="code17">Copy Code</button>
+<pre><code id="code17" class="language-cpp">
+// C++ program to demonstrate friend class
+#include &lt;iostream.h&gt;
+#include &lt;conio.h&gt;
+class ClassB; 
+class ClassA
+{
+    private:
+    int dataA;
+    public:
+    ClassA() :dataA(0) {}
+    friend class ClassB;
+    void display()
+    {
+        cout &lt;&lt; "Data from ClassA: " &lt;&lt; dataA &lt;&lt; endl;
+    }
+};
+class ClassB
+{
+    private:
+    int dataB;
+    public:
+    ClassB() :dataB(0) {}
+    void setDataA(ClassA &a, int value)
+    {
+        a.dataA = value;
+    }
+    void display(ClassA &a)
+    {
+        cout &lt;&lt; "Data from ClassB: " &lt;&lt; dataB &lt;&lt; endl;
+        a.display();
+    }
+};
+int main()
+{
+    clrscr();
+    ClassA a;
+    ClassB b;
+    b.setDataA(a, 10);
+    b.display(a);
+    getch();
+}
+    </code></pre> 
+    
+    <h4 id="linux">Linux commands</h4>
+    <button class="copy-btn" data-target="code18">Copy Code</button>
+    <pre><code id="code18" class="language-bash">
+# Linux commands and attributes
+    pwd : Prints the current working directory.
+    Example : pwd
+
+    ls : Lists files and directories in the current directory.
+    Example : ls -l
+
+    cd : Changes the current directory.
+    Example : cd /home/user
+
+    mkdir : Creates a new directory.
+    Example : mkdir new-directory
+
+    rmdir : Removes an empty directory.
+    Example : rmdir old-directory
+
+    rm : Removes files or directories.
+    Example : rm file.txt
+
+    cp : Copies files or directories.
+    Example : cp source.txt destination.txt
+
+    mv : Moves or renames files or directories.
+    Example : mv oldname.txt newname.txt
+
+    echo : Displays a line of text or a variable value.
+    Example : echo "Hello, World!"
+
+    more : Displays the contents of a file one screen at a time.
+    Example : more file.txt
+
+    less : Similar to more, but allows backward movement in the file.
+    Example : less file.txt
+
+    cal : Displays a calendar.
+    Example : cal 2023
+
+    date : Displays or sets the system date and time.
+    Example : date / date +%d /date +%m / date +%Y
+
+    who : Displays who is logged in.
+    Example : who
+
+    ps : Displays information about running processes.
+    Example : ps aux
+
+    kill : Terminates a process by its PID.
+    Example : kill 1234
+
+    wc : Counts lines, words, and characters in a file.
+    Example : wc file.txt
+
+    who am i : Displays the current user.
+    Example : who am i
+
+    </code></pre>
+
+    <h4 id="fibonacci">linux fibonacci series</h4>
+    <button class="copy-btn" data-target="code19">Copy Code</button>
+    <pre><code id="code19" class="language-bash">
+# Linux script to generate Fibonacci series
+
+        echo "how many terms of Fibonacci series you want to print?"
+        read n
+        a=0
+        b=1
+        i=2
+        echo "Fibonacci series up to $n terms:"
+        echo "$a"
+        echo "$b"
+        while [ $i -lt $n ]
+        do
+            i='expr $i + 1'
+            c=`expr $a + $b`
+            echo "$c"
+            a=$b
+            b=$c
+        done
+    </code></pre>
+
+    <h4 id="time">display message according the time </h4>
+    <button class="copy-btn" data-target="code20">Copy Code</button>
+    <pre><code id="code20" class="language-bash">
+# Linux script to display a message based on the time of day
+
+        a=$(date +"%T")
+        echo "Current time: $a"
+        hour=$(date +"%H")
+        if [ $hour -lt 12 ]
+        then
+            echo "Good Morning!"
+        elif [ $hour -lt 17 ]
+        then
+            echo "Good Afternoon!"
+        else
+            echo "Good Evening!"
+        fi
+
+    </code></pre>
+
+    <h4 id="login">check user is login or not</h4>
+    <button class="copy-btn" data-target="code21">Copy Code</button>
+    <pre><code id="code21" class="language-bash">
+        # Linux script to check if a user is login or not and say "Hello"
+        
+        echo "number of users logged on are"
+        a='who wc -l'
+        echo "$a"
+        echo "details of mee"
+        b='who am i'
+        echo "$b"
+        echo "send a message to user"
+        c='write root pts/1'
+        echo "$c"
+    </code></pre>
+
+    <h4 id="factorial">factorial of a number</h4>
+    <button class="copy-btn" data-target="code22">Copy Code</button>
+    <pre><code id="code22" class="language-bash">
+        # Linux script to calculate the factorial of a number
+
+        echo "Enter a number to calculate its factorial:"
+        read num
+        fact=1
+        while [ $num -ge 1 ]
+        do
+        fact=`expr $fact \* $num`
+        num=`expr $num - 1`
+        done
+        echo "Factorial is: $fact"
+    </code></pre>
+
+    <h4 id="divisible">check number is divisible by 7 or not</h4>
+    <button class="copy-btn" data-target="code23">Copy Code</button>
+    <pre><code id="code23" class="language-bash">
+        # Linux script to check if a number is divisible by 7
+
+        echo "Enter a number to check if it is divisible by 7:"
+        read num
+        check=`expr $num % 7`
+        if [ $check -eq 0 ]
+        then
+            echo "$num is divisible by 7"
+        else
+            echo "$num is not divisible by 7"
+        fi
+
+        </code></pre>
+
+        <h4 id="linux-prime">linux prime number</h4>
+    <button class="copy-btn" data-target="code24">Copy Code</button>
+    <pre><code id="code24" class="language-bash">
+        # Linux script to check if a number is prime or not
+
+        echo "Enter a number:"
+        read num
+        for(( i=2; i*i<=$num; i++ ))
+        do
+        a=$(( $num % $i ))
+        if [ $a -eq 0 ]
+        then
+            echo "$num is not a prime number"
+            exit
+        fi
+        done
+        echo "$num is a prime number"
+    </code></pre>
+
+    <h4 id="linux-palindrome">linux palindrome</h4>
+    <button class="copy-btn" data-target="code25">Copy Code</button>
+    <pre><code id="code25" class="language-bash">
+        # Linux script to check if a number is a palindrome
+
+        echo "Enter a number:"
+        read n
+        temp=$n
+        sum=0
+        r=0
+        a=0
+        while [ $temp -gt 0 ]
+        do
+            a=`expr $temp % 10`
+            sum=`expr $sum \* 10 + $a`
+            temp=`expr $temp / 10`
+        done
+        if [ $n -eq $sum ]
+        then
+            echo "$n is a palindrome"
+        else
+            echo "$n is not a palindrome"
+        fi
+    </code></pre>
+
+    <h4 id="linux-armstrong">linux armstrong </h4>
+    <button class="copy-btn" data-target="code26">Copy Code</button>
+    <pre><code id="code26" class="language-bash">
+        # Linux script to check if a number is an Armstrong number
+
+        echo "Enter a number:"
+        read n
+        x=$n
+        sum=0
+        r=0
+        c=0
+        while [ $x -gt 0 ]
+        do
+            r=`expr $x % 10`
+            sum=`expr $sum + $r \* $r \* $r`
+            x=`expr $x / 10`
+        done
+        if [ $n -eq $sum ]
+        then
+            echo "$n is an Armstrong number"
+        else
+            echo "$n is not an Armstrong number"
+        fi
+    </code></pre>
+
+    <h4 id="filter-redirection">Filter and Redirection</h4>
+    <button class="copy-btn" data-target="code27">Copy Code</button>
+    <pre><code id="code27" class="language-bash">
+        # Linux script to demonstrate filter and redirection (using head,tail,cut,past etc.
+        create result sheet / salary sheet  )
+
+        1. head command
+            i.cat>num
+            ii.head num
+            iii.head -n 5 num
+            iv.head -n 3 num
+
+        2. tail command
+            teil command is used to display the last part of a file.
+            i.tail num
+            ii.tail -n 5 num
+            iii.tail -n 3 num
+
+        3. cut command
+            cut command is used to remove sections from each line of files.
+            i.cut>result
+            ii.cut -f1 result
+            iii.cut -f2 result
+
+
+        
+
+        
+
+
+    <!-- Prism.js JS for syntax highlighting -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-cpp.min.js"></script>
+    <script>
+document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const codeId = btn.getAttribute('data-target');
+        const code = document.getElementById(codeId);
+        if (code) {
+            // Decode HTML entities for copying
+            const text = code.innerHTML
+                .replace(/&lt;/g, '<')
+                .replace(/&gt;/g, '>')
+                .replace(/&amp;/g, '&');
+            navigator.clipboard.writeText(text).then(() => {
+                btn.textContent = 'Copied!';
+                setTimeout(() => btn.textContent = 'Copy', 1200);
+            });
+        }
+    });
+});
+ const topBtn = document.getElementById('topBtn');
+    const bottomBtn = document.getElementById('bottomBtn');
+
+    window.onscroll = function() {
+        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+            topBtn.style.display = "block";
+        } else {
+            topBtn.style.display = "none";
+        }
+    };
+
+    topBtn.onclick = function() {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    };
+
+    bottomBtn.onclick = function() {
+        window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'});
+    };
+</script>
+</body>
+</html>
+
+
+
